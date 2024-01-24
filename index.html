@@ -18,6 +18,8 @@
             margin: 0; 
         }
     </style>
+      <script src="js/boot.js"></script>
+ 
 </head>
 <body>
     <image src="../assets/Einsteins Riddle.png"></image>
@@ -44,19 +46,39 @@
     Pet<p>
 </td>
 <td>
-    <dropdown-list id="house1" />
+    <select id="house-1-color" ></select><p>
+    <select id="house-1-nationality" ></select><p>
+    <select id="house-1-drink" ></select><p>
+    <select id="house-1-cigarette" ></select><p>
+    <select id="house-1-pet" ></select>
 </td>
 <td>
-        <dropdown-list  id="house2"/>
-</td>
+    <select id="house-2-color" ></select><p>
+    <select id="house-2-nationality" ></select><p>
+    <select id="house-2-drink" ></select><p>
+    <select id="house-2-cigarette" ></select><p>
+    <select id="house-2-pet" ></select>
+    </td>
 <td>
-        <dropdown-list  id="house3"/>
-</td>
+    <select id="house-3-color" ></select><p>
+    <select id="house-3-nationality" ></select><p>
+    <select id="house-3-drink" ></select><p>
+    <select id="house-3-cigarette" ></select><p>
+    <select id="house-3-pet" ></select>
+    </td>
 <td>
-        <dropdown-list  id="house4"/>
-</td>
+    <select id="house-4-color" ></select><p>
+    <select id="house-4-nationality" ></select><p>
+    <select id="house-4-drink" ></select><p>
+    <select id="house-4-cigarette" ></select><p>
+    <select id="house-4-pet" ></select>
+    </td>
 <td>
-        <dropdown-list  id="house5"/>
+    <select id="house-5-color" ></select><p>
+    <select id="house-5-nationality" ></select><p>
+    <select id="house-5-drink" ></select><p>
+    <select id="house-5-cigarette" ></select><p>
+    <select id="house-5-pet" ></select>
 </td>
 </td>    
 </tr>
@@ -82,8 +104,16 @@
         </div>
         </div>
 
-        <script src="js/Dropdowns.js"></script>
- 
+      <script>
+        BuildMenu(colors,'color');
+        BuildMenu(nationalities,'nationality');
+        BuildMenu(drinks,'drink');
+        BuildMenu(cigarettes,'cigarette');
+        BuildMenu(pets,'pet');
+
+    
+    </script>
+      </script>
  
     </body>
-    </html>
+    </html> 
