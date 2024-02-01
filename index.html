@@ -1,119 +1,139 @@
 <html>
+
 <head>
     <style>
         h1 {
-          font-family: Arial, Helvetica, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
         }
+
         p {
-          font-family: Arial, Helvetica, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
         }
-        table, th, td {
+
+        table,
+        th,
+        td {
             border: 1px solid;
             border-collapse: collapse;
             font-family: Arial, Helvetica, sans-serif;
-        }    
+        }
+
         ul.no-bullets {
-            list-style-type: none; 
-            padding: 5; 
-            margin: 0; 
+            list-style-type: none;
+            padding: 5;
+            margin: 0;
         }
     </style>
-      <script src="js/boot.js"></script>
- 
+    <script src="js/boot.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
 </head>
+
 <body>
     <image src="../assets/Einsteins Riddle.png"></image>
-            <div class="description">
-                <p>The legend says that this problem was created by Albert Einstein in the last century. Einstein said that only 2% of the world could solve it.</p>
-    <p>There are five houses of different colors next to each other. In each house lives a man. Each man has a unique nationality, an exclusive favorite drink,
-         <br>a distinct favorite brand of cigarettes and keeps specific pets. Use all the clues below to fill the grid and answer the question: <strong>"Who owns the fish?"</strong></p>
-            </div>
-<table>
-<tr>
-<th></th>
-<th>House #1</th>
-<th>House #2</th>
-<th>House #3</th>
-<th>House #4</th>
-<th>House #5</th>
-</tr>
-<tr>
-<td>
-    Color<p>
-    Nationality<p>
-    Drink<p>
-    Cigarette<p>
-    Pet<p>
-</td>
-<td>
-    <select id="house-1-color" ></select><p>
-    <select id="house-1-nationality" ></select><p>
-    <select id="house-1-drink" ></select><p>
-    <select id="house-1-cigarette" ></select><p>
-    <select id="house-1-pet" ></select>
-</td>
-<td>
-    <select id="house-2-color" ></select><p>
-    <select id="house-2-nationality" ></select><p>
-    <select id="house-2-drink" ></select><p>
-    <select id="house-2-cigarette" ></select><p>
-    <select id="house-2-pet" ></select>
-    </td>
-<td>
-    <select id="house-3-color" ></select><p>
-    <select id="house-3-nationality" ></select><p>
-    <select id="house-3-drink" ></select><p>
-    <select id="house-3-cigarette" ></select><p>
-    <select id="house-3-pet" ></select>
-    </td>
-<td>
-    <select id="house-4-color" ></select><p>
-    <select id="house-4-nationality" ></select><p>
-    <select id="house-4-drink" ></select><p>
-    <select id="house-4-cigarette" ></select><p>
-    <select id="house-4-pet" ></select>
-    </td>
-<td>
-    <select id="house-5-color" ></select><p>
-    <select id="house-5-nationality" ></select><p>
-    <select id="house-5-drink" ></select><p>
-    <select id="house-5-cigarette" ></select><p>
-    <select id="house-5-pet" ></select>
-</td>
-</td>    
-</tr>
-</table>
-        <div class="clues">
-            <ol>
-                <li>The Brit lives in the Red house.</li>
-                <li>The Swede keeps Dogs as pets.</li>
-                <li>The Dane drinks Tea.</li>
-                <li>The Green house is exactly to the left of the White house.</li>
-                <li>The owner of the Green house drinks Coffee.</li>
-                <li>The person who smokes Pall Mall rears Birds.</li>
-                <li>The owner of the Yellow house smokes Dunhill.</li>
-                <li>The man living in the centre house drinks Milk.</li>
-                <li>The Norwegian lives in the first house.</li>
-                <li>The man who smokes Blends lives next to the one who keeps Cats.</li>
-                <li>The man who keeps Horses lives next to the man who smokes Dunhill.</li>
-                <li>The man who smokes Blue Master drinks Beer.</li>
-                <li>The German smokes Prince.</li>
-                <li>The Norwegian lives next to the Blue house.</li>
-                <li>The man who smokes Blends has a neighbour who drinks Water.</li>
+    <div class="description">
+        <p>The legend says that this problem was created by Albert Einstein in the last century. Einstein said that only
+            2% of the world could solve it.</p>
+        <p>There are five houses of different colors next to each other. In each house lives a man. Each man has a
+            unique nationality, an exclusive favorite drink,
+            <br>a distinct favorite brand of cigarettes and keeps specific pets. Use all the clues below to fill the
+            grid and answer the question: <strong>"Who owns the fish?"</strong>
+        </p>
+    </div>
+    <table>
+        <tr>
+            <th></th>
+            <th>House #1</th>
+            <th>House #2</th>
+            <th>House #3</th>
+            <th>House #4</th>
+            <th>House #5</th>
+        </tr>
+        <tr>
+            <td>
+                Color<br>
+                Nationality<br>
+                Drink<br>
+                Cigarette<br>
+                Pet<br>
+            </td>
+            <td id="house-1">
+                <select id="house-1-color"></select><br>
+                <select id="house-1-nationality"></select><br>
+                <select id="house-1-drink"></select><br>
+                <select id="house-1-cigarette"></select><br>
+                <select id="house-1-pet"></select>
+            </td>
+            <td id="house-2">
+                <select id="house-2-color"></select><br>
+                <select id="house-2-nationality"></select><br>
+                <select id="house-2-drink"></select><br>
+                <select id="house-2-cigarette"></select><br>
+                <select id="house-2-pet"></select>
+            </td>
+            <td id="house-3">
+                <select id="house-3-color"></select><br>
+                <select id="house-3-nationality"></select><br>
+                <select id="house-3-drink"></select><br>
+                <select id="house-3-cigarette"></select><br>
+                <select id="house-3-pet"></select>
+            </td>
+            <td id="house-4">
+                <select id="house-4-color"></select><br>
+                <select id="house-4-nationality"></select><br>
+                <select id="house-4-drink"></select><br>
+                <select id="house-4-cigarette"></select><br>
+                <select id="house-4-pet"></select>
+            </td>
+            <td id="house-5">
+                <select id="house-5-color"></select><br>
+                <select id="house-5-nationality"></select><br>
+                <select id="house-5-drink"></select><br>
+                <select id="house-5-cigarette"></select><br>
+                <select id="house-5-pet"></select>
+            </td>
+            </td>
+        </tr>
+    </table>
+    <div class="clues">
+        <ol>
+            <li>The Brit lives in the Red house.</li>
+            <li>The Swede keeps Dogs as pets.</li>
+            <li>The Dane drinks Tea.</li>
+            <li>The Green house is exactly to the left of the White house.</li>
+            <li>The owner of the Green house drinks Coffee.</li>
+            <li>The person who smokes Pall Mall rears Birds.</li>
+            <li>The owner of the Yellow house smokes Dunhill.</li>
+            <li>The man living in the centre house drinks Milk.</li>
+            <li>The Norwegian lives in the first house.</li>
+            <li>The man who smokes Blends lives next to the one who keeps Cats.</li>
+            <li>The man who keeps Horses lives next to the man who smokes Dunhill.</li>
+            <li>The man who smokes Blue Master drinks Beer.</li>
+            <li>The German smokes Prince.</li>
+            <li>The Norwegian lives next to the Blue house.</li>
+            <li>The man who smokes Blends has a neighbour who drinks Water.</li>
             </ul>
-        </div>
-        </div>
+    </div>
+    </div>
 
-      <script>
-        BuildMenu(colors,'color');
-        BuildMenu(nationalities,'nationality');
-        BuildMenu(drinks,'drink');
-        BuildMenu(cigarettes,'cigarette');
-        BuildMenu(pets,'pet');
-
-    
+    <script>
+        BuildMenu(colors, 'color');
+        BuildMenu(nationalities, 'nationality');
+        BuildMenu(drinks, 'drink');
+        BuildMenu(cigarettes, 'cigarette');
+        BuildMenu(pets, 'pet');
+        for (var i = 1; i < 6; i++) {
+            $(document).on("change", "#house-"+ i +"-color", function () {
+                const val = $(this).find(":selected")[0].value.trim();
+                const id = $(this).find(":selected")[0].id.trim();
+                var house = $(this)[0].id;
+                document.getElementById(house.substring(0,7)).style.backgroundColor=val;
+                DisableValues(id,house);
+            });
+        }
     </script>
-      </script>
- 
-    </body>
-    </html> 
+    </script>
+
+</body>
+
+</html>
