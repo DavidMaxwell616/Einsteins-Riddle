@@ -3,6 +3,8 @@ const nationalities = ['', 'Brit', 'Dane', 'German', 'Norwegian', 'Swede'];
 const drinks = ['', 'Beer', 'Coffee', 'Milk', 'Tea', 'Water'];
 const cigarettes = ['', 'Blends', 'Blue Master', 'Dunhill', 'Pall Mall', 'Prince'];
 const pets = ['', 'Birds', 'Cats', 'Dogs', 'Horses', 'Fish'];
+const categories = ['color','nationality','drink','cigarette','pet'];
+const groups = ['colors','nationalities','drinks','cigarettes','pets'];
 const clues =
 {
     1: 'h3-n1-same',
@@ -33,15 +35,17 @@ function BuildMenu(arr, category) {
     }
 }
 
-function DisableValues(val,house)
+function DisableValues(id, house)
 {
-    for (i = 1; i < 6; i++) {
-        if(i!=val)
+    var houseNumber = house.split('-')[1];
+    for (i = 1; i < numHouses; i++) {
+        if(i!=houseNumber)
         {
-            var e = document.getElementById(house.replace(val,i));
-            $(e.options[val]).prop('disabled', true);
+            var e = document.getElementById(house.replace(houseNumber,i));
+            for (let index = 0; index < categories.length; index++) {
+                 $(e.options[index]).prop('disabled', false);
+            }
+            $(e.options[id]).prop('disabled', true);
         }
-            //            console.log(document.getElementById(house.replace(val,i).option[value='1']));
-        // $(house+'-'+type+'.'+ 'option[value='+id+']').prop('disabled', true);
     }
 }

@@ -117,20 +117,22 @@
     </div>
 
     <script>
-        BuildMenu(colors, 'color');
-        BuildMenu(nationalities, 'nationality');
-        BuildMenu(drinks, 'drink');
-        BuildMenu(cigarettes, 'cigarette');
-        BuildMenu(pets, 'pet');
+        for (let index = 0; index < groups.length; index++) {
+            BuildMenu(eval(groups[index]), categories[index]);
+        }
         for (var i = 1; i < 6; i++) {
-            $(document).on("change", "#house-"+ i +"-color", function () {
+            for (let j = 0; j < 5; j++) {
+                var houseName = "#house-"+ i +"-"+categories[j];
+            $(document).on("change", houseName, function () {
                 const val = $(this).find(":selected")[0].value.trim();
                 const id = $(this).find(":selected")[0].id.trim();
                 var house = $(this)[0].id;
-                document.getElementById(house.substring(0,7)).style.backgroundColor=val;
+                if(categories[j]=='color')
+                    document.getElementById(house.substring(0,7)).style.backgroundColor=val;
                 DisableValues(id,house);
             });
-        }
+            }
+       }
     </script>
     </script>
 
