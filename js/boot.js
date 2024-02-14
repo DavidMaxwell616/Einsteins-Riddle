@@ -5,23 +5,24 @@ const cigarettes = ['', 'Blends', 'Blue Master', 'Dunhill', 'Pall Mall', 'Prince
 const pets = ['', 'Birds', 'Cats', 'Dogs', 'Horses', 'Fish'];
 const categories = ['color','nationality','drink','cigarette','pet'];
 const groups = ['colors','nationalities','drinks','cigarettes','pets'];
+const numHouses = 5;
 const clues =
 {
-    1: 'h3-n1-same',
-    2: 'n5-p3-same',
-    3: 'n2-d4-same',
-    4: 'h2-h4-neighbor',
-    5: 'h2-d2-same',
-    6: 'c4-p1-same',
-    7: 'h5-c3-same',
-    8: 'h3-d3-same',
-    9: 'n4-h1-same',
-    10: 'c1-p2-neighbor',
-    11: 'p4-c3-neighbor',
-    12: 'c2-d1-same',
-    13: 'n3-c5-same',
-    14: 'n4-h1-neighbor',
-    15: 'c1-d5-neighbor',
+    1: ['house-3','nationality-1','same'],
+    2: ['nationality-5','pet-3','same'],
+    3: ['nationality','2-drink-4','same'],
+    4: ['house-2','house-4','neighbor'],
+    5: ['house-2','drink-2','same'],
+    6: ['cigarette-4','p1-same'],
+    7: ['house-5-c3-same'],
+    8: ['house-3-d3-same'],
+    9: ['nationality-4','house1','same'],
+    10:['cigarette-1','pet-2','neighbor'],
+    11:['pet-4','cigarette-3','neighbor'],
+    12:['cigarette-2','drink-1','same'],
+    13:['nationality-3','cigarette-5','same'],
+    14:['nationality-4','house-1','neighbor'],
+    15:['cigarette-1','drink-5','neighbor'],
 };
 
 function BuildMenu(arr, category) {
@@ -42,10 +43,14 @@ function DisableValues(id, house)
         if(i!=houseNumber)
         {
             var e = document.getElementById(house.replace(houseNumber,i));
-            for (let index = 0; index < categories.length; index++) {
+            for (let index = 0; index < categories; index++) {
                  $(e.options[index]).prop('disabled', false);
             }
             $(e.options[id]).prop('disabled', true);
         }
     }
+}
+
+function CheckClues(id, house)
+{
 }
