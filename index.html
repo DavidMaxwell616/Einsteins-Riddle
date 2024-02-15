@@ -17,14 +17,13 @@
             border-collapse: collapse;
             font-family: Arial, Helvetica, sans-serif;
         }
-
         ul.no-bullets {
             list-style-type: none;
             padding: 5;
             margin: 0;
         }
     </style>
-    <script src="js/boot.js"></script>
+    <script src="js/code.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 
 </head>
@@ -97,21 +96,21 @@
     </table>
     <div class="clues">
         <ol>
-            <li>The Brit lives in the Red house.</li>
-            <li>The Swede keeps Dogs as pets.</li>
-            <li>The Dane drinks Tea.</li>
-            <li>The Green house is exactly to the left of the White house.</li>
-            <li>The owner of the Green house drinks Coffee.</li>
-            <li>The person who smokes Pall Mall rears Birds.</li>
-            <li>The owner of the Yellow house smokes Dunhill.</li>
-            <li>The man living in the centre house drinks Milk.</li>
-            <li>The Norwegian lives in the first house.</li>
-            <li>The man who smokes Blends lives next to the one who keeps Cats.</li>
-            <li>The man who keeps Horses lives next to the man who smokes Dunhill.</li>
-            <li>The man who smokes Blue Master drinks Beer.</li>
-            <li>The German smokes Prince.</li>
-            <li>The Norwegian lives next to the Blue house.</li>
-            <li>The man who smokes Blends has a neighbour who drinks Water.</li>
+            <li id="clue-1">The Brit lives in the Red house.</li>
+            <li id="clue-2">The Swede keeps Dogs as pets.</li>
+            <li id="clue-3">The Dane drinks Tea.</li>
+            <li id="clue-4">The Green house is exactly to the left of the White house.</li>
+            <li id="clue-5">The owner of the Green house drinks Coffee.</li>
+            <li id="clue-6">The person who smokes Pall Mall rears Birds.</li>
+            <li id="clue-7">The owner of the Yellow house smokes Dunhill.</li>
+            <li id="clue-8">The man living in the centre house drinks Milk.</li>
+            <li id="clue-9">The Norwegian lives in the first house.</li>
+            <li id="clue-10">The man who smokes Blends lives next to the one who keeps Cats.</li>
+            <li id="clue-11">The man who keeps Horses lives next to the man who smokes Dunhill.</li>
+            <li id="clue-12">The man who smokes Blue Master drinks Beer.</li>
+            <li id="clue-13">The German smokes Prince.</li>
+            <li id="clue-14">The Norwegian lives next to the Blue house.</li>
+            <li id="clue-15">The man who smokes Blends has a neighbour who drinks Water.</li>
             </ul>
     </div>
     </div>
@@ -122,18 +121,18 @@
         }
         for (var i = 1; i < 6; i++) {
             for (let j = 0; j < 5; j++) {
-                var houseName = "#house-"+ i +"-"+categories[j];
-            $(document).on("change", houseName, function () {
-                const val = $(this).find(":selected")[0].value.trim();
-                const id = $(this).find(":selected")[0].id.trim();
-                var house = $(this)[0].id;
-                if(categories[j]=='color')
-                    document.getElementById(house.substring(0,7)).style.backgroundColor=val;
-                DisableValues(id,house);
-                CheckClues(id,house);
-            });
+                var houseName = "#house-" + i + "-" + categories[j];
+                $(document).on("change", houseName, function () {
+                    const val = $(this).find(":selected")[0].value.trim();
+                    const id = $(this).find(":selected")[0].id.trim();
+                    var house = $(this)[0].id;
+                    if (categories[j] == 'color')
+                        document.getElementById(house.substring(0, 7)).style.backgroundColor = val;
+                    DisableValues(id, house);
+                    CheckClues();
+                });
             }
-       }
+        }
     </script>
     </script>
 
