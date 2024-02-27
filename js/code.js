@@ -69,8 +69,19 @@ function CheckClues() {
                 }
             }
             else if (clue[2] == 'neighbor') {
-                console.log(clue, value);
+                const x = i > 0 ? 1 : 0;
+                const x2 = i < valuesSelected.length ? 1 : 0;
+                const value = valuesSelected[i - x];
+                const value2 = valuesSelected[i + x2];
+                if (value2 != undefined && areNeighbors(value[0], value2[0])) {
+                console.log(clue[1], value2[1]);
+                if ((clue[0] == value[1] && clue[1] == value2[1]) || (clue[0] == value[1] && clue[1] == value2[0])) {
+                        document.getElementById('clue-' + (index + 1)).style.backgroundColor = 'Green';
+                    }
+                }
             }
         }
     }
 }
+
+const areNeighbors = (house1, house2) => Math.abs(house2.slice(-1) - house1.slice(-1)) === 1;
